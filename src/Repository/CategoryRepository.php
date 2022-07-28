@@ -41,25 +41,25 @@ class CategoryRepository extends ServiceEntityRepository
 
     public function createOrUpdate($categoryName)
     {
-        foreach ($newsDto->getAll() as $news) {
-            $newsItemInstance = new News();
-            $newsItemInstance->setHeader($news->getHeader())
-                // ->setImage($news->getImage())
-                ->setDescription($news->getDescription())
-                ->setCategory($category);
-            // ->setNewsId($news->getNewsId());
+    //     foreach ($newsDto->getAll() as $news) {
+    //         $newsItemInstance = new News();
+    //         $newsItemInstance->setHeader($news->getHeader())
+    //             // ->setImage($news->getImage())
+    //             ->setDescription($news->getDescription())
+    //             ->setCategory($category);
+    //         // ->setNewsId($news->getNewsId());
 
-            $image = new Image();
-            $image->setNews($newsItemInstance);
-            $image->setImage($news->getImage());
+    //         $image = new Image();
+    //         $image->setNews($newsItemInstance);
+    //         $image->setImage($news->getImage());
 
-            $em->persist($newsItemInstance);
-        }
-        $category = $this->findOneBy(['name' => $categoryName]);
-        if ($category === null) {
-            $category = new Category();
-            $category->setName($categoryName);
-        }
-        return $category;
-    }
+    //         $em->persist($newsItemInstance);
+    //     }
+    //     $category = $this->findOneBy(['name' => $categoryName]);
+    //     if ($category === null) {
+    //         $category = new Category();
+    //         $category->setName($categoryName);
+    //     }
+    //     return $category;
+    // }
 }
